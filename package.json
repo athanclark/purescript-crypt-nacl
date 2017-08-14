@@ -7,7 +7,7 @@
   },
   "dependencies": {
     "text-encoding": "^0.6.4",
-    "tweetnacl": "^1.0.0-rc.1"
+    "tweetnacl": "git://github.com/mooti-dev/tweetnacl-js.git#more-verbose"
   },
   "devDependencies": {
     "pulp": "^11.0.0",
