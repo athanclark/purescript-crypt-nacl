@@ -47,11 +47,16 @@ exports._boxOpen = function(box) {
   return function(nonce) {
     return function(publicKey) {
       return function(secretKey) {
-        var v = nacl.box.open(box, nonce, publicKey, secretKey);
-        if (!v) {
+        try {
+          var v = nacl.box.open(box, nonce, publicKey, secretKey);
+          if (!v) {
+            return null;
+          } else {
+            return v;
+          }
+        } catch (e) {
+          console.warn('_boxOpen error:', e);
           return null;
-        } else {
-          return v;
         }
       }
     }
