@@ -1,5 +1,6 @@
 module Crypt.NaCl.Sign
   ( generateSignKeyPair
+  , seedSignKeyPair
   , getSignKeyPair
   , getSignPublicKey
   , getSignSecretKey
