@@ -7,6 +7,10 @@ exports.generateSignKeyPair = function() {
   return nacl.sign.keyPair();
 }
 
+exports.seedSignKeyPair = function(seed) {
+  return nacl.sign.keyPair.fromSeed(seed);
+}
+
 exports.getSignKeyPair = function(secretKey) {
   return nacl.sign.keyPair.fromSecretKey(secretKey);
 }

@@ -12,6 +12,7 @@ module Crypt.NaCl.Sign
 import Control.Monad.Eff (Eff)
 import Data.Nullable (Nullable, toMaybe)
 import Data.Maybe (Maybe)
+import Data.ArrayBuffer.Types (Uint8Array)
 
 import Crypt.NaCl.Types (
     Message
@@ -25,6 +26,8 @@ import Crypt.NaCl.Types (
 
 -- | Generate a random key pair for signing messages
 foreign import generateSignKeyPair :: forall e. Eff (naclRandom :: NACL_RANDOM | e) SignKeyPair
+
+foreign import seedSignKeyPair :: Uint8Array -> SignKeyPair
 
 -- | Get the signing keypair for a given `SignSecretKey`
 foreign import getSignKeyPair :: SignSecretKey -> SignKeyPair
